@@ -5,13 +5,18 @@ class ProductsController < ApplicationController
   end
 
   def create
-    product = Product.create(
+    product = Product.new(
       name: params[:name] || "default item",
       price: params[:price] || "price TBD",
       image_url: params[:image_url] || "NO IMAGE UPLOADED",
       description: params[:description] || "defaul description",
+      quantity: params[:quantity] || 0,
     )
-    render json: product
+    if product.save
+      render json: product
+    else
+      render json: { errors: product.errors.full_messages }, status: 422
+    end
   end
 
   def show
@@ -25,8 +30,13 @@ class ProductsController < ApplicationController
     product.price = params[:price] || product.price
     product.image_url = params[:image_url] || product.image_url
     product.description = params[:description] || product.description
-    product.save
-    render json: product
+    product.quantity = params[:quantity] || product.quantity
+
+    if product.save
+      render json: product
+    else
+      render json: { errors: product.errors.full_messages }, status: 422
+    end
   end
 
   def destroy

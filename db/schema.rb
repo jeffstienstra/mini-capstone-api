@@ -24,5 +24,4 @@ ActiveRecord::Schema.define(version: 2021_05_11_005618) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "quantity"
   end
-
 end
