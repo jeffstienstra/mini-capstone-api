@@ -10,4 +10,10 @@ Rails.application.routes.draw do
   get "/products/:id" => "products#show"  #display a specific product by id
   patch "/products/:id" => "products#update" #update a specific product by id
   delete "/products/:id" => "products#destroy" #delete a specific product by id
+
+  get "/suppliers" => "suppliers#index"  #display a list of all suppliers
+  post "/suppliers" => "suppliers#create"  #create a new product
+  get "/suppliers/:id" => "suppliers#show"  #display a specific product by id
+  patch "/suppliers/:id" => "suppliers#update" #update a specific product by id
+  delete "/suppliers/:id" => "suppliers#destroy" #delete a specific product by id
 end

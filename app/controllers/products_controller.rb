@@ -45,3 +45,4 @@ class ProductsController < ApplicationController
     render json: { message: "Your product has been thoroughly destroyed to death." }
   end
 end
+
