@@ -1,42 +1,6 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or create!d alongside the database with db:setup).
 
-Product.create!(
-  name: "DW Design Series",
-  price: 1650,
-  url: "https://www.drumcenternh.com/media/catalog/product/cache/1/thumbnail/460x460/9df78eab33525d08d6e5fb8d27136e95/d/w/dw-collectors-maple-vlt-333-5pc-drum-set-candy-black-burst-over-monkey-pod-w_black-nickel-hw-.jpg",
-  description: "5-piece Shell Pack with 10\" & 12\" Rack Toms, 16\" Floor Tom, 14\" Snare Drum and 22\" Bass Drum",
-  quantity: 3,
-  supplier_id: 2,
-)
-
-Product.create!(
-  name: "DW Collector's Series",
-  price: 4650,
-  url: "https://www.drumcenternh.com/media/catalog/product/d/w/dw-performance-5pc-2-up_2-down-drum-set-ebony-stain-front-.jpg",
-  description: "5-piece Maple Shell Pack with 10\" & 12\" Toms, 14\" & 16\" Floor Toms and 22\" Bass Drum",
-  quantity: 2,
-  supplier_id: 1,
-)
-
-Product.create!(
-  name: "DW Collector's Series",
-  price: 3750,
-  url: "https://i.pinimg.com/originals/22/7b/af/227baf2aef64cdcb581e89f2a7bcf426.jpg",
-  description: "4-piece Birch Shell Pack with 10\" & 12\" Toms, 14\" & 16\" Floor Toms and 22\" Bass Drum",
-  quantity: 1,
-  supplier_id: 1,
-)
-
-Product.create!(
-  name: "DW Custom Series",
-  price: 4995,
-  url: "https://pbs.twimg.com/media/BXHcFR-CMAAAmHB.jpg",
-  description: "6-piece Shell Pack with 10\" & 12\" Rack Toms, 16\" Floor Tom, 14\" Snare Drum and 22\" Bass Drum",
-  quantity: 0,
-  supplier_id: 2,
-)
-
 Supplier.create!(
   name: "DW",
   phone: "555-555-5678",
@@ -47,4 +11,76 @@ Supplier.create!(
   name: "Premier",
   phone: "556-555-5888",
   email: "Premier@example.com",
+)
+
+Product.create!(
+  name: "DW Design Series",
+  price: 1650,
+  description: "Color: wood-grain. 5-piece Shell Pack with 10\" & 12\" Rack Toms, 16\" Floor Tom, 14\" Snare Drum and 22\" Bass Drum",
+  quantity: 3,
+  supplier_id: 2,
+)
+
+Product.create!(
+  name: "DW Collector's Series",
+  price: 4650,
+  description: "Color: black. 5-piece Maple Shell Pack with 10\" & 12\" Toms, 14\" & 16\" Floor Toms and 22\" Bass Drum",
+  quantity: 2,
+  supplier_id: 1,
+)
+
+Product.create!(
+  name: "DW Special Series",
+  price: 3750,
+  description: "Color: red. 4-piece Birch Shell Pack with 10\" & 12\" Toms, 14\" & 16\" Floor Toms and 22\" Bass Drum",
+  quantity: 1,
+  supplier_id: 1,
+)
+
+Product.create!(
+  name: "DW Custom Series",
+  price: 4995,
+  description: "Color: sunburst. 6-piece Shell Pack with 10\" & 12\" Rack Toms, 16\" Floor Tom, 14\" Snare Drum and 22\" Bass Drum",
+  quantity: 0,
+  supplier_id: 2,
+)
+
+Image.create!(
+  url: "https://images.reverb.com/image/upload/s--V5KFpzg_--/f_auto,t_supersize/v1587860801/jiryixflpenossdgn9jk.jpg",
+  product_id: 1,
+)
+
+Image.create!(
+  url: "https://images.reverb.com/image/upload/s--yOXCdryk--/f_auto,t_supersize/v1587861247/fcxw6tknq0p8ryzcket9.jpg",
+  product_id: 1,
+)
+
+Image.create!(
+  url: "https://cdn.shopify.com/s/files/1/1422/9358/products/DW-DRUM-WORKSHOP-COLLECTORS-SERIES-MAPLE-MAHOGANY-6-PIECE-DRUM-KIT-DRUMAZON_01_1000x.jpg?v=1571775719",
+  product_id: 2,
+)
+
+Image.create!(
+  url: "https://cdn.shopify.com/s/files/1/1422/9358/products/DW-DRUM-WORKSHOP-COLLECTORS-SERIES-MAPLE-MAHOGANY-6-PIECE-DRUM-KIT-DRUMAZON_20_1000x.jpg?v=1571775719",
+  product_id: 2,
+)
+
+Image.create!(
+  url: "https://images.reverb.com/image/upload/s--I_6e1flv--/a_exif,c_limit,e_unsharp_mask:80,f_auto,fl_progressive,g_south,h_1600,q_80,w_1600/v1472692539/txcdxfs4axenw0mtyfqw.jpg",
+  product_id: 3,
+)
+
+Image.create!(
+  url: "https://images.reverb.com/image/upload/s--BTCxky-b--/a_exif,c_limit,e_unsharp_mask:80,f_auto,fl_progressive,g_south,h_1600,q_80,w_1600/v1472694639/wr7hd09t1awhiuj1v6fa.jpg",
+  product_id: 3,
+)
+
+Image.create!(
+  url: "https://cdn.shopify.com/s/files/1/0249/9600/products/1138505-1_1024x1024.jpg?v=1571264543",
+  product_id: 4,
+)
+
+Image.create!(
+  url: "https://cdn.shopify.com/s/files/1/0249/9600/products/1138505-2.jpg?v=1571264543",
+  product_id: 4,
 )
