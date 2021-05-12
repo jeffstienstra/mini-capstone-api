@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
       price: params[:price] || "price TBD",
       description: params[:description] || "defaul description",
       quantity: params[:quantity] || 0,
+      supplier_id: params[:supplier_id],
     )
     if product.save
       render json: product
@@ -29,6 +30,7 @@ class ProductsController < ApplicationController
     product.price = params[:price] || product.price
     product.description = params[:description] || product.description
     product.quantity = params[:quantity] || product.quantity
+    product.supplier_id = params[:supplier_id] || product.supplier_id
 
     if product.save
       render json: product
