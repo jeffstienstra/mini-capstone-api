@@ -22,4 +22,9 @@ Rails.application.routes.draw do
   get "/images/:id" => "images#show"  #display a specific product by id
   patch "/images/:id" => "images#update" #update a specific product by id
   delete "/images/:id" => "images#destroy" #delete a specific product by id
+
+  get "/users" => "users#index"  #display a list of all users
+  post "/users" => "users#create"
+
+  post "/sessions" => "sessions#create"
 end

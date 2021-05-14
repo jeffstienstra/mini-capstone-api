@@ -13,6 +13,7 @@ class ProductsController < ApplicationController
       supplier_id: params[:supplier_id],
     )
     if product.save
+      Image.create(product_id: product.id, url: params[:image_url])
       render json: product
     else
       render json: { errors: product.errors.full_messages }, status: 422
