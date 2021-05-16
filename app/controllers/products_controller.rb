@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   def index
     products = Product.all.order(:id)
-    render json: products
+    render json: products.as_json
   end
 
   def create
