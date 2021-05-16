@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   def index
     # orders = Order.where(user_id: current_user.id)
     orders = current_user.orders
-    render json: orders.as_json
+    render json: orders
   end
 
   def create
@@ -21,7 +21,7 @@ class OrdersController < ApplicationController
       total: total.to_i,
     )
     if order.save
-      render json: order.as_json, status: :created
+      render json: order, status: :created
     else
       render json: { errors: order.errors.full_messages }, status: :bad_request
     end
@@ -30,6 +30,6 @@ class OrdersController < ApplicationController
   def show
     # order = Order.find_by(id: params[:id])
     order = current_user.orders.find_by(id: params[:id])
-    render json: order.as_json
+    render json: order
   end
 end
