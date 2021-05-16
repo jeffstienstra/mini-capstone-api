@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   def index
-    orders = Order.find_by(user_id: current_user.id)
+    # orders = Order.where(user_id: current_user.id)
+    orders = current_user.orders
     render json: orders.as_json
   end
 
@@ -27,7 +28,8 @@ class OrdersController < ApplicationController
   end
 
   def show
-    order = Order.find_by(id: params[:id])
+    # order = Order.find_by(id: params[:id])
+    order = current_user.orders.find_by(id: params[:id])
     render json: order.as_json
   end
 end
