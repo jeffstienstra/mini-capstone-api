@@ -1,7 +1,9 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_admin, except: [:index, :show]
+
   def index
     products = Product.all.order(:id)
-    render json: products.as_json
+    render json: products
   end
 
   def create
